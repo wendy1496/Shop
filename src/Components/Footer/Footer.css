@@ -1,0 +1,13 @@
+.footer {
+    height: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #01234cb3;
+    text-align: center;
+    color: white;
+    font-style:oblique;
+    font-weight: bolder;
+    position:fixed;
+  }

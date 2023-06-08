@@ -1,24 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-
+import NavBar from './Components/Navbar/NavBar'
+import Home from './Components/Home/Home';
+import Women from './Components/Women/Trend';
+import Detalle from './Components/Detalle/Detalle';
+import Login from './Components/Login/Login'
+import { Data } from './Context/Data';
+import Carrito from './Components/Carrito/Carrito';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 function App() {
   return (
+    <Data>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <NavBar/>
+      <Carrito></Carrito>
+
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/Trend' element={<Women/>}></Route>
+          <Route path='/Trend/:id' element={<Detalle/>}></Route>
+          <Route path='/Login' element={<Login/>}></Route>
+        </Routes>
+      </Router>
+      
     </div>
+    </Data>
+
   );
 }
 
